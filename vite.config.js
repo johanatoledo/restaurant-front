@@ -1,23 +1,32 @@
-// vite.config.js
 import { defineConfig } from 'vite';
+import path from 'path';
 
 export default defineConfig({
-  root: 'front', 
-  base: './', 
+  root: '.',  // Ya estás en /front/
+  base: '/',
   server: {
-    port: 5500, 
-    open: true, 
+    port: 5173,
+    open: true,
     proxy: {
-      // 
-      '/inicio': {
-        target: 'http://localhost:5500',
-        changeOrigin: true,
-        secure: false,
-      }
+      '/admin': 'http://localhost:3000',
+      '/menu': 'http://localhost:3000',
+      '/uploads': 'http://localhost:3000',
+      '/ingresar': 'http://localhost:3000',
+      '/ingresarUsuario': 'http://localhost:3000',
     }
   },
   build: {
     outDir: 'dist',
+    assetsDir: 'assets',
+    manifest: true, 
+    rollupOptions: {
+      input: {
+        main: path.resolve(__dirname, 'index.html'),
+        ingresar: path.resolve(__dirname, 'ingresar.html'),
+        ingresarUsuario: path.resolve(__dirname, 'ingresarUsuario.html'),
+        menuInicio: path.resolve(__dirname, 'menuInicio.html'),
+        errorpage: path.resolve(__dirname, '404.html'),
+      }
+    }
   }
 });
-

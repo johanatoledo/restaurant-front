@@ -1,7 +1,8 @@
+// auth/register.js
 
-window.addEventListener('DOMContentLoaded', async () => {
+export async function initRegisterOrRecover() {
   const params = new URLSearchParams(window.location.search);
-  const opcion = params.get('opcion'); 
+  const opcion = params.get('opcion');
   const contenedor = document.getElementById('contenedor-formularios');
 
   if (!contenedor || !opcion) return;
@@ -22,10 +23,8 @@ window.addEventListener('DOMContentLoaded', async () => {
     const html = await res.text();
     contenedor.innerHTML = html;
 
+    // --- Registro ---
     if (opcion === 'registro') {
-      const res = await fetch(endpoint);
-    const html = await res.text();
-    document.getElementById("contenedor-formularios").innerHTML = html;
       const form = document.getElementById('form-registro');
       form?.addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -41,14 +40,12 @@ window.addEventListener('DOMContentLoaded', async () => {
 
         const data = await response.json();
         alert(data.message || 'Registro procesado');
-        window.location.href = '/';
+        window.location.href = '/ingresarUsuario';
       });
     }
 
+    // --- Recuperar contraseña ---
     if (opcion === 'recuperar') {
-    const res = await fetch(endpoint);
-    const html = await res.text();
-    document.getElementById("contenedor-formularios").innerHTML = html;
       const form = document.getElementById('form-recuperar');
       form?.addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -60,15 +57,17 @@ window.addEventListener('DOMContentLoaded', async () => {
           body: JSON.stringify({ email })
         });
 
-      const data = await response.json();
+        const data = await response.json();
 
-   if (response.ok) {
-  const { token } = data; 
-  alert('Recuperación procesada. Serás redirigido al formulario de nueva contraseña.');
-  setTimeout(() => {
-    window.location.href = `/ingresar/reset-password?token=${token}`;
-  }, 2000);
-}
+        if (response.ok) {
+          const { token } = data;
+          alert('Recuperación procesada. Serás redirigido al formulario de nueva contraseña.');
+          setTimeout(() => {
+            window.location.href = `/ingresar/reset-password?token=${token}`;
+          }, 2000);
+        } else {
+          alert(data.message || 'No se pudo recuperar la cuenta');
+        }
       });
     }
   } catch (err) {
@@ -80,7 +79,7 @@ window.addEventListener('DOMContentLoaded', async () => {
   if (logoutBtn) {
     logoutBtn.addEventListener('click', () => {
       localStorage.removeItem('usuarioLogueado');
-      window.location.href = '/';
+      window.location.href = '/ingresarUsuario';
     });
   }
-});
+}

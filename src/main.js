@@ -1,3 +1,8 @@
+import './styles/styles.css';
+
+import { initLoginForm } from './auth/login.js';
+import { initRegisterOrRecover } from './auth/register.js';
+
 import { crearFormularioIngredientes } from './models/ingredients.js';
 import { crearFormularioPlato } from './models/formPlatos.js';
 import { crearFormularioBebida } from './models/formBebida.js';
@@ -181,6 +186,8 @@ window.addEventListener("DOMContentLoaded", () => {
     renderizarIngredientesEnContenedor();
   }
 
+  initLoginForm();
+  initRegisterOrRecover();
   inicializarMenuPlatos();
   inicializarMenuBebidas();
 });

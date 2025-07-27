@@ -1,9 +1,12 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const form = document.getElementById('form-login-inicio');
+// auth/login.js
 
-  form?.addEventListener('submit', async (e) => {
+export function initLoginForm() {
+  const form = document.getElementById('form-login-inicio');
+  if (!form) return;
+
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
-   
+
     const email = document.getElementById('loginEmail').value.trim();
     const password = document.getElementById('loginPassword').value.trim();
 
@@ -22,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       if (res.ok) {
-       localStorage.setItem("usuarioLogueado", JSON.stringify(data.user));
+        localStorage.setItem("usuarioLogueado", JSON.stringify(data.user));
         alert('Bienvenido ' + (data.user?.nombre || 'usuario'));
         setTimeout(() => {
           window.location.href = '/admin/editarMenu';
@@ -38,4 +41,4 @@ document.addEventListener('DOMContentLoaded', () => {
       alert("Error en el servidor. Intente más tarde.");
     }
   });
-});
+}
