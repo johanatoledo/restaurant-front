@@ -1,6 +1,7 @@
 
 import { Plate } from './plate.js';
 
+const API_URL = import.meta.env.VITE_API_URL || 'https://restaurant-back-production.up.railway.app';
 let formPlato= null;
 let listaIngredientes = []; 
 
@@ -147,7 +148,7 @@ async function cargarIngredientesSelect() {
   if (!select) return;
 
   try {
-    const res = await fetch("http://localhost:3000/admin/listaIngredientes");
+    const res = await fetch(`${API_URL}/admin/listaIngredientes`);
     const ingredientes = await res.json();
     ingredientes.forEach(ing => {
       const option = document.createElement("option");
@@ -183,7 +184,7 @@ async function enviarPlato(e) {
   if (imagen) formData.append("imagen", imagen);
 
   try {
-    const res = await fetch("http://localhost:3000/admin/platos", {
+    const res = await fetch(`${API_URL}/admin/platos`, {
       method: "POST",
       body: formData
     });
@@ -240,7 +241,7 @@ toast.innerHTML = `
 
 document.body.appendChild(toast);
 document.getElementById("toast-close").onclick = function () {
-  window.location.href = "http://localhost:3000/admin/platos"; 
+  window.location.href = `${API_URL}/admin/platos`; 
 };
 
 
@@ -249,7 +250,7 @@ setTimeout(() => {
     toast.style.opacity = "0";
     setTimeout(() => {
       if (toast.parentNode) toast.remove();
-      window.location.href = "http://localhost:3000/admin/platos";
+      window.location.href = `${API_URL}/admin/platos`;
     }, 400);
   }
 }, 4000);

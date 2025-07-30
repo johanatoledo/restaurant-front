@@ -1,6 +1,6 @@
 // listaBebidas.js
 
-const backendBaseUrl = "http://localhost:3000";
+const backendBaseUrl = import.meta.env.VITE_API_URL || 'https://restaurant-back-production.up.railway.app';
 
 
 export async function renderizarPlatosEnContenedor() {

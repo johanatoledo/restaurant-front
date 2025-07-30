@@ -1,6 +1,7 @@
 
 import { Drink } from './drink.js';
 
+const API_URL = import.meta.env.VITE_API_URL || 'https://restaurant-back-production.up.railway.app';
 let formBebida = null;
 let listaIngredientes = []; 
 
@@ -179,7 +180,8 @@ async function cargarIngredientesSelect() {
   if (!select) return;
 
   try {
-    const res = await fetch("http://localhost:3000/admin/listaIngredientes");
+   
+    const res = await fetch(`${API_URL}/admin/listaIngredientes`);
     const ingredientes = await res.json();
     ingredientes.forEach(ing => {
       const option = document.createElement("option");
@@ -221,7 +223,7 @@ const plainBebida = {
 
  
   try {
-    const res = await fetch("http://localhost:3000/admin/bebidas", {
+    const res = await fetch(`${API_URL}/admin/bebidas`, {
       method: "POST",
       body: formData
     });
@@ -280,7 +282,7 @@ document.body.appendChild(toast);
 
 document.getElementById("toast-close").onclick = function () {
  
-  window.location.href = "http://localhost:3000/admin/bebidas"; 
+  window.location.href = `${API_URL}/admin/bebidas`; 
 };
 
 
@@ -289,7 +291,7 @@ setTimeout(() => {
     toast.style.opacity = "0";
     setTimeout(() => {
       if (toast.parentNode) toast.remove();
-      window.location.href = "http://localhost:3000/admin/bebidas";
+      window.location.href = `${API_URL}/admin/bebidas`;
     }, 400);
   }
 }, 4000);
