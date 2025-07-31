@@ -24,7 +24,7 @@ export default defineConfig({
         main: path.resolve(__dirname, 'index.html'),
         ingresar: path.resolve(__dirname, 'ingresar.html'),
         ingresarUsuario: path.resolve(__dirname, 'ingresarUsuario.html'),
-        menuInicio: path.resolve(__dirname, 'menuInicio.html'),
+        menu: path.resolve(__dirname, 'menu.html'),
         errorpage: path.resolve(__dirname, '404.html'),
       }
     }
