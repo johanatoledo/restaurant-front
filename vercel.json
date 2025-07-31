@@ -1,20 +1,15 @@
 {
   "rewrites": [
+    { "source": "/menu", "destination": "/menu.html" },
     { "source": "/ingresar", "destination": "/ingresar.html" },
     { "source": "/ingresarUsuario", "destination": "/ingresarUsuario.html" },
-    { "source": "/menu", "destination": "/menu.html" },
-    { "source": "/404", "destination": "/404.html" },
-    { "source": "/index", "destination": "/index.html" }
+    { "source": "/404", "destination": "/404.html" }
   ],
-  "headers": [
+  "redirects": [
     {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
+      "source": "/404.html",
+      "destination": "/404",
+      "statusCode": 301
     }
   ]
 }
