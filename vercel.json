@@ -1,0 +1,20 @@
+{
+  "rewrites": [
+    { "source": "/ingresar.html", "destination": "/ingresar.html" },
+    { "source": "/ingresarUsuario.html", "destination": "/ingresarUsuario.html" },
+    { "source": "/menu.html", "destination": "/menu.html" },
+    { "source": "/404.html", "destination": "/404.html" },
+    { "source": "/index.html", "destination": "/index.html" }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ]
+}
