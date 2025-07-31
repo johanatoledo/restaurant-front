@@ -1,10 +1,10 @@
 {
   "rewrites": [
-    { "source": "/ingresar.html", "destination": "/ingresar.html" },
-    { "source": "/ingresarUsuario.html", "destination": "/ingresarUsuario.html" },
-    { "source": "/menu.html", "destination": "/menu.html" },
-    { "source": "/404.html", "destination": "/404.html" },
-    { "source": "/index.html", "destination": "/index.html" }
+    { "source": "/ingresar", "destination": "/ingresar.html" },
+    { "source": "/ingresarUsuario", "destination": "/ingresarUsuario.html" },
+    { "source": "/menu", "destination": "/menu.html" },
+    { "source": "/404", "destination": "/404.html" },
+    { "source": "/index", "destination": "/index.html" }
   ],
   "headers": [
     {
