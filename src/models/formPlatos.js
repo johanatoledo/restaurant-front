@@ -1,7 +1,7 @@
 
 import { Plate } from './plate.js';
 
-const API_URL = import.meta.env.VITE_API_URL || 'https://restaurant-back-production.up.railway.app';
+const API_URL = import.meta.env.VITE_API_URL ;
 let formPlato= null;
 let listaIngredientes = []; 
 

@@ -1,5 +1,5 @@
 // auth/login.js
-
+const API = import.meta.env.VITE_API_URL; 
 export function initLoginForm() {
   const form = document.getElementById('form-login-inicio');
   if (!form) return;
@@ -11,7 +11,7 @@ export function initLoginForm() {
     const password = document.getElementById('loginPassword').value.trim();
 
     try {
-      const res = await fetch('http://localhost:3000/admin/login', {
+      const res = await fetch(`${API}/admin/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password })
@@ -28,7 +28,7 @@ export function initLoginForm() {
         localStorage.setItem("usuarioLogueado", JSON.stringify(data.user));
         alert('Bienvenido ' + (data.user?.nombre || 'usuario'));
         setTimeout(() => {
-          window.location.href = '/admin/editarMenu';
+          window.location.href = `${API}/admin/editarMenu`;
         }, 200);
       } else {
         alert(data.message || "Credenciales incorrectas");
