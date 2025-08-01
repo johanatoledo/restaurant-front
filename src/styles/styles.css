@@ -459,25 +459,42 @@ font-size: 1.5rem;
     min-height: 100vh;
   }
 }
+
+
 @media(min-width:400px) and (max-width: 900px) {
+ .menu-nav {
+  
+    background-color: rgba(var(--rosita-verde), 0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    padding: auto;
+  
+    position: static; 
+    top: auto;     
+    z-index: 700;
+  }
   .menu-horizontal{
-  padding-right: 4rem !important;
+  padding: auto !important;
+  margin-top: 0 !important;
 }
+.size-nav-item{
+    font-size: 0.7rem !important;
+  }
   .container-cards{
     padding:4rem 0rem !important;
   }
  .menu-nav {
+    min-height: 20vh !important;
     flex-direction: column !important;
     text-align: center;
+  }
+  .size-nav-item{
+    font-size: 0.7rem !important;
   }
   .menu-horizontal {
     margin-top: 1em;
   }
   
-  .description-acerca-de {
-    flex-direction: column;
-    gap: 1.5em;
-  }
+
   .menu-horizontal{
     margin:5rem !important;
   }
@@ -492,6 +509,69 @@ font-size: 1.5rem;
      width:80vw !important;
      box-shadow: 0 0 32px 12px rgba(255, 193, 7, 0.12);
   }
+
+ .plato-image{
+  width:100% !important;
+  max-height: 250px !important;
+ 
+
+ }  
+ .min-container-platos{
+  width:100% !important;
+ }
+
+ .row{
+  width: 250px !important;
+ 
+ }
+ .col-6{
+  width: 200px !important;
+  height: 150px !important;
+ }
+ 
+  
+  .carousel.slide {
+    width: 100vw !important;
+    height: auto !important;
+    min-height: 400px;
+  }
+  .carousel-inner .carousel-item img {
+    height: 220px !important;
+    width: 100% !important;
+    object-fit: cover;
+  }
+  .zoom-img img {
+    height: 120px !important;
+  }
+  .elemento-decorativo{
+    width:70vw !important;
+    
+  }
+  .title-acerca-de{
+    font-size: 1.2rem !important;
+     text-align: center !important;
+  }
+  .description-acerca-de {
+    font-size: 0.9rem;
+    text-align: justify !important;
+    flex-direction: row;
+    gap: 1.5em;
+    line-height: 1.2;
+    width: 70vw !important;
+  }
+  .row {
+    margin: 0 !important;
+  }
+  .carousel-control-prev{
+    height: 50vh !important;
+  }
+  .carousel-control-next{
+    height: 50vh !important ;
+  }
+
+
+
+
   #form-bebida {
   
   width: 90vw !important;
@@ -521,6 +601,72 @@ font-size: 1.5rem;
   .carousel-video-hero { height: 180px; }
   .floating-login-card { padding: 1.5em 0.8em 1.1em 0.8em; }
  
+}
+@media(min-width:900px) and (max-width: 1024px) {
+  .col{
+    width: 100% !important;
+  }
+
+
+
+  .size-nav-item{
+    font-size: 1.2rem !important;
+  }
+ 
+  
+  .description-acerca-de {
+    flex-direction: column;
+    gap: 1.5em;
+    
+  }
+  .menu-horizontal{
+    margin:5rem !important;
+  }
+  .row {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1.5em !important;
+    width:100vw !important;
+   justify-content: center !important;
+  }
+  .col-md-4{
+     width:80vw !important;
+     box-shadow: 0 0 32px 12px rgba(255, 193, 7, 0.12);
+  }
+
+ .plato-image{
+  width:100% !important;
+  max-height: 300px !important;
+ 
+
+ }  
+ .min-container-platos{
+  width:100% !important;
+ }
+  .container-platos-inicio,
+  .carousel.slide {
+    width: 100vw !important;
+    height: 100% !important;
+    min-height: 300px;
+  }
+  .carousel-inner .carousel-item img {
+    height: 100% !important;
+    width: 100% !important;
+    object-fit: cover;
+  }
+  .zoom-img img {
+    height: 120px !important;
+  }
+  .description_title, .description-acerca-de {
+    font-size: 1.5rem !important;
+    text-align: center !important;
+  }
+  .row {
+    margin: 0 !important;
+  }
+
+
+
 }
 
 

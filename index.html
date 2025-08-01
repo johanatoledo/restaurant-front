@@ -18,10 +18,10 @@
         <img  src="/assets/logosaborosita.png" class="logo" alt="Logo El sabor de Rosita">
         <div class="menu-horizontal">
           <ul class="nav justify-content-end">
-            <li class="nav-item ">
+            <li class="nav-item size-nav-item">
               <a class="nav-link " aria-current="page" href="#">Inicio</a>
             </li>
-           <li class="nav-item">
+           <li class="nav-item size-nav-item">
              <a class="nav-link nav" href="/menu">Menu</a>
           </li>
          
@@ -56,44 +56,44 @@
          </article>
     </section>
 
-     <div class="text-center">
+     <div class="text-center elemento-decorativo">
      <img src="/assets/elementodecorativo.png" alt="decorativo" style="width:400px;max-width:400vw; margin: 0.5rem auto 0.5rem auto;display:block;">
     </div>
 
 <div class="container ">
-  <div class="row row-cols-2 ">
+  <div class="row row-cols-1 row-cols-md-2 g-4">
     <div class="col ">
          <div class="description_title" style="font-style: italic;">
-             <h2 >Acerca de</h2>
-            <h2 >El sabor de Rosita</h2>
+
+            <h2 class="title-acerca-de" >Acerca de <br> El sabor de Rosita</h2>
           </div>
-             <p class="description-acerca-de " >En <b>El Sabor de Rosita</b> rendimos homenaje a la auténtica cocina tradicional limeña y venezolana. Nuestra propuesta es una fusión cuidadosamente elaborada que combina lo mejor de ambas culturas gastronómicas, creando una experiencia única pensada para reunir y celebrar en familia.<br></br>
+             <p class="description-acerca-de w-100 mt-3" >En <b>El Sabor de Rosita</b> rendimos homenaje a la auténtica cocina tradicional limeña y venezolana. Nuestra propuesta es una fusión cuidadosamente elaborada que combina lo mejor de ambas culturas gastronómicas, creando una experiencia única pensada para reunir y celebrar en familia.<br></br>
 
 Inspirados por la generosidad de nuestros ancestros, cada plato que servimos evoca la calidez del hogar y la alegría de compartir con amigos. Creemos que la buena comida no tiene fronteras: aquí, sin importar la edad ni el lugar de origen, todos son bienvenidos y se sienten parte de una gran fiesta.
 
 Descubre el sabor, la tradición y la hospitalidad que nos caracteriza.<br> <br> ¡Bienvenido a El Sabor de Rosita, donde cada encuentro se convierte en un momento especial!</p>
 
       </div>
-    <div class="col">
+    <div class="col min-container-platos">
      <div class="container my-3 container-platos-inicio rounded-3" style="width: 45vw !important; height: 80vh; ">
       <div class="row g-4 bg-white  shadow p-4">
     <div class="col-6">
-      <div class="zoom-img overflow-hidden rounded-3 shadow-sm">
+      <div class="plato-image zoom-img overflow-hidden rounded-3 shadow-sm">
         <img src="/assets/causaRellenaInicio.png" alt="Causa Rellena" class="img-fluid w-100 h-100 object-fit-cover" style="height: 150px;">
       </div>
     </div>
     <div class="col-6">
-      <div class="zoom-img overflow-hidden rounded-3 shadow-sm">
+      <div class="plato-image zoom-img overflow-hidden rounded-3 shadow-sm">
         <img src="/assets/cevicheInicio.png" alt="Ceviche Peruano" class="img-fluid w-100 h-100 object-fit-cover" style="height: 150px;">
       </div>
     </div>
     <div class="col-6">
-      <div class="zoom-img overflow-hidden rounded-3 shadow-sm">
-        <img src="/assets/comidaVnezolanaInicio.png" alt="Comida venezolana variada" class="img-fluid w-100 h-100 object-fit-cover" style="height: 275px !important;">
+      <div class="plato-image zoom-img overflow-hidden rounded-3 shadow-sm">
+        <img src="/assets/pabellonCriolloPlatos.png" alt="Comida venezolana variada" class="img-fluid w-100 h-100 object-fit-cover" >
       </div>
     </div>
     <div class="col-6">
-      <div class="zoom-img overflow-hidden rounded-3 shadow-sm">
+      <div class="plato-image zoom-img overflow-hidden rounded-3 shadow-sm">
         <img src="/assets/sopaVenezolana.png" alt="Sopa Venezolana" class="img-fluid w-100 h-100 object-fit-cover" style="height: 150px;">
       </div>
     </div>
@@ -149,9 +149,7 @@ Descubre el sabor, la tradición y la hospitalidad que nos caracteriza.<br> <br>
 
    
 <style>
-/* Estilos en línea: Esto no es lo ideal para estilos complejos.
-   Considera mover estos estilos a tu archivo styles.css en src/styles/
-*/
+
 .zoom-img img {
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
