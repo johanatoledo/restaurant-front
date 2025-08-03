@@ -3,93 +3,86 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>El sabor de Rosita|Fusion</title>
-  <link rel="icon" type="image/x-icon" href="assets/logofondoblanco.png">
-  <link rel="stylesheet" href="./src/styles/styles.css"/>
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
- 
+  <title>El sabor de Rosita | Fusion</title>
+  <link rel="icon" type="image/x-icon" href="/assets/logofondoblanco.png">
+  <!-- Asegúrate que este CSS exista en tu build -->
+  <link rel="stylesheet" href="/assets/styles.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 </head>
 <body class="body-inicio">
   
-
-        <img  src="assets/logosaborosita.png" class="logo" alt="Logo El sabor de Rosita">
-  
+  <header>
+    <img src="/assets/logosaborosita.png" class="logo" alt="Logo El sabor de Rosita">
+  </header>
 
   <main>
-<div class="majestic-carousel-container position-relative"  >
- 
-  <div id="carouselVideos" class="carousel slide carousel-fade"    data-bs-ride="carousel" data-bs-interval="6000">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <video class="carousel-video-hero" autoplay loop muted playsinline>
-          <source src="/public/assets/restaurant.mp4" type="video/mp4">
-        </video>
+    <div class="majestic-carousel-container position-relative">
+      <div id="carouselVideos" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="6000">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <video class="carousel-video-hero" autoplay loop muted playsinline>
+              <source src="/assets/restaurant.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="carousel-item">
+            <video class="carousel-video-hero" autoplay loop muted playsinline>
+              <source src="/assets/chefCocinando.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="carousel-item">
+            <video class="carousel-video-hero" autoplay loop muted playsinline>
+              <source src="/assets/videoPreparacion.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="carousel-item">
+            <video class="carousel-video-hero" autoplay loop muted playsinline>
+              <source src="/assets/bartendersVideo.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="carousel-item">
+            <video class="carousel-video-hero" autoplay loop muted playsinline>
+              <source src="/assets/coctelVideo.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="carousel-item">
+            <video class="carousel-video-hero" autoplay loop muted playsinline>
+              <source src="/assets/jugoNatural.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <div class="carousel-overlay"></div>
       </div>
-      <div class="carousel-item">
-        <video class="carousel-video-hero" autoplay loop muted playsinline>
-          <source src="/public/assets/chefCocinando.mp4" type="video/mp4">
-        </video>
+
+      <div class="floating-login-card">
+        <form method="GET" id="form-login-inicio" autocomplete="on" action="#">
+          <div class="login-title letter-gold text-center"><h2>Acceso al personal</h2></div>
+          <div class="mb-3">
+            <label for="loginEmail" class="form-label letter-gold">Email</label>
+            <input type="email" class="form-control" id="loginEmail" name="email" placeholder="email@example.com" required>
+          </div>
+          <div class="mb-3">
+            <label for="loginPassword" class="form-label letter-gold">Contraseña</label>
+            <input type="password" class="form-control" id="loginPassword" name="password" placeholder="Contraseña" required>
+          </div>
+          <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="dropdownCheck">
+            <label class="form-check-label letter-gold" for="dropdownCheck">Recordarme</label>
+          </div>
+          <button id="iniciar-sesion" type="submit" class="btn btn-primary w-100">Iniciar sesión</button>
+        </form>
+        <div class="dropdown-divider my-2"></div>
+        <a class="dropdown-item" href="/ingresar.html?opcion=registro">¿Nuevo aquí? Regístrate</a>
+        <a class="dropdown-item" href="/ingresar.html?opcion=recuperar">¿Olvidaste tu contraseña?</a>
       </div>
-      <div class="carousel-item">
-        <video class="carousel-video-hero" autoplay loop muted playsinline>
-          <source src="/public/assets/videoPreparacion.mp4" type="video/mp4">
-        </video>
-      </div>
-      <div class="carousel-item">
-        <video class="carousel-video-hero" autoplay loop muted playsinline>
-          <source src="/public/assets/bartendersVideo.mp4" type="video/mp4">
-        </video>
-      </div>
-      <div class="carousel-item">
-        <video class="carousel-video-hero" autoplay loop muted playsinline>
-          <source src="/public/assets/coctelVideo.mp4" type="video/mp4">
-        </video>
-      </div>
-      <div class="carousel-item">
-        <video class="carousel-video-hero" autoplay loop muted playsinline>
-          <source src="/public/assets/jugoNatural.mp4" type="video/mp4">
-        </video>
+      <div class="login-footer text-center letter-gold">
+        <h5> Solo para chefs y personal autorizado</h5>
       </div>
     </div>
-   
-   
-    <div class="carousel-overlay"></div>
-  </div>
-
-  <div class="floating-login-card">
-  <form  method="GET"  id="form-login-inicio" autocomplete="on" >
-    <div class="login-title  letter-gold text-center"><h2>Acceso al personal</h2></div>
-      <div class="mb-3">
-        <label for="loginEmail" class="form-label letter-gold">Email</label>
-        <input type="email" class="form-control" id="loginEmail" name="email" placeholder="email@example.com" required>
-      </div>
-      <div class="mb-3">
-        <label for="loginPassword" class="form-label  letter-gold">Contraseña</label>
-        <input type="password" class="form-control" id="loginPassword" name="password" placeholder="Contraseña" required>
-      </div>
-      <div class="mb-3 form-check">
-        <input type="checkbox" class="form-check-input" id="dropdownCheck">
-        <label class="form-check-label  letter-gold" for="dropdownCheck">
-          Recordarme
-        </label>
-      </div>
-      <button id="iniciar-sesion" type="submit" class="btn btn-primary w-100" >Iniciar sesión</button>
-    </form>
-    <div class="dropdown-divider my-2"></div>
-   <a class="dropdown-item" href="/ingresar.html?opcion=registro">¿Nuevo aquí? Regístrate</a>
-    <a class="dropdown-item" href="/ingresar.html?opcion=recuperar">¿Olvidaste tu contraseña?</a>
-  </div>
-   <div class="login-footer text-center letter-gold">
-     <h5> Solo para chefs y personal autorizado</h5> 
-    </div>
-</div>
-
   </main>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
- <script type="module" src="./src/main.js"></script>
 
-
-
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <!-- Para desarrollo usa /src/main.js, para producción usa /assets/main.js (verifica nombre tras el build) -->
+  <script type="module" src="/assets/main.js"></script>
 </body>
 </html>
