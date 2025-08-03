@@ -223,6 +223,18 @@ font-size: 1.5rem;
 .col{
   row-gap:1em !important;
 }
+.carousel-slide {
+    width: 45vw; 
+  }
+  .carousel-inner {
+    height: 80vh; 
+  }
+
+  .plato-name{
+    color:var(--rosita-dorado);
+    text-align: center;
+    padding-top: 1rem;
+  }
 
 .footer {
   display: flex;
@@ -462,6 +474,7 @@ font-size: 1.5rem;
 
 
 @media(min-width:400px) and (max-width: 900px) {
+  
  .menu-nav {
   
     background-color: rgba(var(--rosita-verde), 0.95);
@@ -470,7 +483,7 @@ font-size: 1.5rem;
   
     position: static; 
     top: auto;     
-    z-index: 700;
+    z-index: 900;
   }
   .menu-horizontal{
   padding: auto !important;
@@ -479,11 +492,15 @@ font-size: 1.5rem;
 .size-nav-item{
     font-size: 0.7rem !important;
   }
+  .main-inicio{
+    padding-top: 0px !important;
+  
+  }
   .container-cards{
     padding:4rem 0rem !important;
   }
  .menu-nav {
-    min-height: 20vh !important;
+    min-height: 10vh !important;
     flex-direction: column !important;
     text-align: center;
   }
@@ -491,19 +508,48 @@ font-size: 1.5rem;
     font-size: 0.7rem !important;
   }
   .menu-horizontal {
-    margin-top: 1em;
+     margin:3rem !important;
+
   }
   
+.banner-section {
+  height: 50vh; 
+  min-height: 250px;
+  max-height: 500px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
 
-  .menu-horizontal{
-    margin:5rem !important;
-  }
+.image-slider,
+.slide {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-element,
+.banner-element-video {
+  width: 100%;
+  height: 100%;
+  max-width: 100vw;
+  max-height: 50vh;
+  object-fit: cover; 
+  object-position: center;
+  transition: all 0.3s;
+}
+
+ 
   .row {
     display: flex !important;
     flex-direction: column !important;
     gap: 1.5em !important;
-    width:80vw !important;
    justify-content: center !important;
+    margin: 0 !important;
+ 
   }
   .col-md-4{
      width:80vw !important;
@@ -516,12 +562,10 @@ font-size: 1.5rem;
  
 
  }  
- .min-container-platos{
-  width:100% !important;
- }
-
- .row{
-  width: 250px !important;
+ 
+ .col{
+  width: 320px !important;
+  
  
  }
  .col-6{
@@ -529,22 +573,33 @@ font-size: 1.5rem;
   height: 150px !important;
  }
  
-  
-  .carousel.slide {
-    width: 100vw !important;
-    height: auto !important;
-    min-height: 400px;
-  }
-  .carousel-inner .carousel-item img {
-    height: 220px !important;
-    width: 100% !important;
-    object-fit: cover;
-  }
+
+/* Estilos para el contenedor principal del banner */
+.carousel-slide {
+  height: 50vh; 
+  width: 70vw;
+  overflow: hidden;
+  position: relative; 
+}
+
+
+.carousel-inner {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+/* Estilos para el contenedor del slider bebidas*/
+.image-carousel {
+  width: 100%;
+  height: 100%;
+}
   .zoom-img img {
     height: 120px !important;
   }
   .elemento-decorativo{
-    width:70vw !important;
+    text-align: center;
+    width:50vw !important;
     
   }
   .title-acerca-de{
@@ -559,16 +614,19 @@ font-size: 1.5rem;
     line-height: 1.2;
     width: 70vw !important;
   }
-  .row {
-    margin: 0 !important;
-  }
-  .carousel-control-prev{
-    height: 50vh !important;
-  }
-  .carousel-control-next{
-    height: 50vh !important ;
+  .plato-name{
+    font-size:0.9rem;
   }
 
+  .carousel-control-prev{
+    display:none;
+  }
+  .carousel-control-next{
+    display: none;
+  }
+ .list-info{
+  font-size:0.8rem;
+ }
 
 
 
@@ -601,6 +659,12 @@ font-size: 1.5rem;
   .carousel-video-hero { height: 180px; }
   .floating-login-card { padding: 1.5em 0.8em 1.1em 0.8em; }
  
+  .container-footer{
+    text-align: center;
+  }
+  .logo-footer{
+    justify-content: center !important;
+  }
 }
 @media(min-width:900px) and (max-width: 1024px) {
   .col{
