@@ -7,11 +7,11 @@ import { crearFormularioIngredientes } from './models/ingredients.js';
 import { crearFormularioPlato } from './models/formPlatos.js';
 import { crearFormularioBebida } from './models/formBebida.js';
 
-import { renderizarBebidasEnContenedor } from './models/listaBebidas.js';  // Corrige el nombre exacto de tu archivo
+import { renderizarBebidasEnContenedor } from './models/listaBebidas.js';  
 import { renderizarPlatosEnContenedor } from './models/listaPlatos.js';
 import { renderizarIngredientesEnContenedor } from './models/listaIngredientes.js';
 
-
+const API = import.meta.env.VITE_API_URL;
 
 async function inicializarMenuPlatos() {
   const contenedor = document.getElementById('contenedor-menu-dinamico');
@@ -22,7 +22,7 @@ async function inicializarMenuPlatos() {
   let apiURL = '';
 
   if (params.has('categoria')) {
-    apiURL = `/menu/platos?categoria=${encodeURIComponent(params.get('categoria'))}`;
+    apiURL = `${API}/menu/platos?categoria=${encodeURIComponent(params.get('categoria'))}`;
   } else {
     contenedor.innerHTML = `<div class="alert alert-info text-center">No hay categoría/tipo seleccionado.</div>`;
     return;
@@ -145,10 +145,7 @@ function renderizarTarjetasBebidas(contenedor, items) {
 
 
 window.addEventListener("DOMContentLoaded", () => {
-  // Inicialización de menús y eventos
-  const contenedorMenu = document.getElementById('contenedor-menu-dinamico');
-  const contenedorBebidas = document.getElementById("menu-bebidas");
-
+ 
   // Inicializa formularios de administración (si existen)
   const btnAgregar = document.getElementById("btn-agregar-ingrediente");
   const btnAgregarPlato = document.getElementById("btn-agregar-plato");
@@ -184,40 +181,19 @@ window.addEventListener("DOMContentLoaded", () => {
   initLoginForm();
   initRegisterOrRecover();
 
-  // ---- EVENTO CLICK TARJETAS DE MENÚ PRINCIPAL ----
-  document.querySelectorAll('#menu-grid a[data-categoria]').forEach(link => {
-    link.addEventListener('click', function(e) {
-      e.preventDefault();
-      const categoria = this.getAttribute('data-categoria');
-      if (categoria) {
-        window.history.pushState({}, '', `?categoria=${encodeURIComponent(categoria)}`);
-       
-        if (contenedorMenu) cargarMenuPorCategoria(contenedorMenu);
-        if (contenedorBebidas && categoria === "Bebidas") renderizarCategoriasBebidas(contenedorBebidas);
-      }
-    });
-  });
+  //menu platos y bebidas
 
-  // ---- SOPORTE NAVEGACIÓN ATRÁS/DELANTE ----
-  window.addEventListener('popstate', () => {
-    if (contenedorMenu) cargarMenuPorCategoria(contenedorMenu);
-    if (contenedorBebidas) {
-      const params = new URLSearchParams(window.location.search);
-      if (params.has('categoria')) {
-        mostrarBebidasPorCategoria(params.get('categoria'));
-      } else {
-        renderizarCategoriasBebidas(contenedorBebidas);
-      }
+ document.querySelectorAll('#menu-grid a[data-categoria]').forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    const categoria = this.getAttribute('data-categoria');
+    if (categoria) {
+      window.history.pushState({}, '', `?categoria=${encodeURIComponent(categoria)}`);
+
+      if (document.getElementById('contenedor-menu-dinamico')) inicializarMenuPlatos();
+      if (document.getElementById("menu-bebidas")) inicializarMenuBebidas();
     }
   });
-
-  // Inicializa menú/platos según categoría actual de la URL
-  if (contenedorMenu) cargarMenuPorCategoria(contenedorMenu);
-  if (contenedorBebidas) {
-    renderizarCategoriasBebidas(contenedorBebidas);
-    const searchParams = new URLSearchParams(window.location.search);
-    if (searchParams.has('categoria')) {
-      mostrarBebidasPorCategoria(searchParams.get('categoria'));
-    }
-  }
+});
+ 
 });

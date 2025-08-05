@@ -2,7 +2,7 @@ import { defineConfig } from 'vite';
 import path from 'path';
 
 export default defineConfig({
-  root: '.',  // Ya estás en /front/
+  root: '.',  
   base: '/',
   server: {
     port: 5173,
