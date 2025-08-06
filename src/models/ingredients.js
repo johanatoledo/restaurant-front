@@ -36,6 +36,7 @@ export function crearFormularioIngredientes(formTarjetas, contenedorTarjetas) {
     <div>
 
       <button id="btn-guardar" type="button" class="btn btn-primary">Guardar</button>
+      <button id="btn-mostrar" type="button" class="btn btn-primary">Mostrar</button>
       <button id="btn-salir" type="button" class="btn btn-secondary">Salir</button>
     </div>
   `;
@@ -85,6 +86,9 @@ export function crearFormularioIngredientes(formTarjetas, contenedorTarjetas) {
   formIngredientes.querySelector("#btn-salir").addEventListener("click", () => {
     formIngredientes.remove();
     formTarjetas.style.display = "block";
+  });
+  formIngredientes.querySelector("#btn-mostrar").addEventListener("click", () => {
+     window.location.href =  window.location.href = '/api/admin/ingredientes';
   });
 
   function limpiarCampos() {
