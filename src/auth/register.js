@@ -80,7 +80,7 @@ export async function initRegisterOrRecover() {
   if (logoutBtn) {
     logoutBtn.addEventListener('click', () => {
       localStorage.removeItem('usuarioLogueado');
-      window.location.href =  window.location.href = `https://restaurant-front-ten.vercel.app/ingresarUsuario`;;
+      window.location.href =  window.location.href = `https://restaurant-front-ten.vercel.app/ingresarUsuario`;
     });
   }
 }
