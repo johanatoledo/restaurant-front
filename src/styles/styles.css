@@ -502,6 +502,12 @@ html, body {
     font-size: small !important;
     word-spacing: -2px;
   }
+ /*fondo formulario ingreso usuario*/
+  .body-ingresar {
+    background: url('/assets/fondoFormularios.png') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100%;
+  }
 }
 
 /* Estilo para iPad Pro en modo vertical */

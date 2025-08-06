@@ -1,4 +1,4 @@
-
+//clase para bebidas
 
 export class Drink{
   constructor(nombre,descripcion,precio,categoria,ingredientes,imagen){

@@ -1,7 +1,9 @@
-// listaBebidas.js
+// listaBebidas
 
 const VITE_API_URL = import.meta.env.VITE_API_URL;
-const API=`${VITE_API_URL}/api`
+const API=`${VITE_API_URL}/api`;
+const backendBaseUrl='https://restaurant-back-production.up.railway.app';
+
 
 export async function renderizarBebidasEnContenedor() {
   const contenedor = document.getElementById('container-bebidas');

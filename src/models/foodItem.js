@@ -1,4 +1,4 @@
-
+//clase para ingredientes
 export class FoodItem {
   constructor(nombre, calorias, vegano, gluten, citrico) {
     this.nombre = nombre;
