@@ -41,7 +41,7 @@ export async function initRegisterOrRecover() {
 
         const data = await response.json();
         alert(data.message || 'Registro procesado');
-        window.location.href = `${API}/ingresarUsuario`;
+         window.location.href = `https://restaurant-front-ten.vercel.app/ingresarUsuario`;
       });
     }
 
@@ -80,7 +80,7 @@ export async function initRegisterOrRecover() {
   if (logoutBtn) {
     logoutBtn.addEventListener('click', () => {
       localStorage.removeItem('usuarioLogueado');
-      window.location.href = `${API}/ingresarUsuario`;
+      window.location.href =  window.location.href = `https://restaurant-front-ten.vercel.app/ingresarUsuario`;;
     });
   }
 }
