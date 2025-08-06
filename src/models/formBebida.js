@@ -83,6 +83,7 @@ export async function crearFormularioBebida(formTarjetas, contenedorTarjetas) {
     </div>
     <div class="d-flex flex-column flex-sm-row gap-2 mt-3">
       <button id="btn-guardar" type="submit" class="btn btn-primary w-100 w-sm-auto">Guardar Bebida</button>
+      <button id="btn-mostrar" type="button" class="btn btn-primary  w-100 w-sm-auto">Mostrar</button>
       <button id="btn-salir" type="button" class="btn btn-secondary w-100 w-sm-auto">Salir</button>
     </div>
   </div>
@@ -116,7 +117,7 @@ export async function crearFormularioBebida(formTarjetas, contenedorTarjetas) {
 
   
   formBebida.querySelector("#btn-salir").addEventListener("click", () => cancelarFormulario(formTarjetas));
-
+    formBebida.querySelector("#btn-mostrar").addEventListener("click", () => window.location.href = '/api/admin/bebidas');
 
   await cargarIngredientesSelect();
 

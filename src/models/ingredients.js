@@ -88,7 +88,7 @@ export function crearFormularioIngredientes(formTarjetas, contenedorTarjetas) {
     formTarjetas.style.display = "block";
   });
   formIngredientes.querySelector("#btn-mostrar").addEventListener("click", () => {
-     window.location.href =  window.location.href = '/api/admin/ingredientes';
+     window.location.href = '/api/admin/ingredientes';
   });
 
   function limpiarCampos() {
