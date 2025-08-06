@@ -1,5 +1,6 @@
 // auth/login.js
-const API = import.meta.env.VITE_API_URL; 
+const VITE_API_URL = import.meta.env.VITE_API_URL;
+const API=`${VITE_API_URL}/api`
 export function initLoginForm() {
   const form = document.getElementById('form-login-inicio');
   if (!form) return;

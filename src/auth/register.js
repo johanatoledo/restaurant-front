@@ -1,5 +1,6 @@
 // auth/register.js
-const API_URL = import.meta.env.VITE_API_URL;
+const VITE_API_URL = import.meta.env.VITE_API_URL;
+const API=`${VITE_API_URL}/api`
 export async function initRegisterOrRecover() {
   const params = new URLSearchParams(window.location.search);
   const opcion = params.get('opcion');
@@ -10,11 +11,11 @@ export async function initRegisterOrRecover() {
   let endpoint = '';
   let postEndpoint = '';
   if (opcion === 'registro') {
-    endpoint = `${API_URL}/ingresar/register`;
-    postEndpoint = `${API_URL}/ingresar/register`;
+    endpoint = `${API}/ingresar/register`;
+    postEndpoint = `${API}/ingresar/register`;
   } else if (opcion === 'recuperar') {
-    endpoint = `${API_URL}/ingresar/recuperar`;
-    postEndpoint = `${API_URL}/ingresar/recuperar`;
+    endpoint = `${API}/ingresar/recuperar`;
+    postEndpoint = `${API}/ingresar/recuperar`;
   }
 
   try {
@@ -63,7 +64,7 @@ export async function initRegisterOrRecover() {
           const { token } = data;
           alert('Recuperación procesada. Serás redirigido al formulario de nueva contraseña.');
           setTimeout(() => {
-            window.location.href = `${API_URL}/ingresar/reset-password?token=${token}`;
+            window.location.href = `${API}/ingresar/reset-password?token=${token}`;
           }, 2000);
         } else {
           alert(data.message || 'No se pudo recuperar la cuenta');
@@ -79,7 +80,7 @@ export async function initRegisterOrRecover() {
   if (logoutBtn) {
     logoutBtn.addEventListener('click', () => {
       localStorage.removeItem('usuarioLogueado');
-      window.location.href = `${API_URL}/ingresarUsuario`;
+      window.location.href = `${API}/ingresarUsuario`;
     });
   }
 }
