@@ -41,7 +41,7 @@ export async function initRegisterOrRecover() {
 
         const data = await response.json();
         alert(data.message || 'Registro procesado');
-        window.location.href = `${API_URL}/ingresarUsuario`;
+        window.location.href = `${API}/ingresarUsuario`;
       });
     }
 
