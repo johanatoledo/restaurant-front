@@ -1,5 +1,6 @@
 import { FoodItem } from './foodItem.js';
-
+const VITE_API_URL = import.meta.env.VITE_API_URL;
+const API=`${VITE_API_URL}/api`
 export function crearFormularioIngredientes(formTarjetas, contenedorTarjetas) {
   const formIngredientes = document.createElement("form");
   formIngredientes.id = "form-ingredientes";
@@ -57,7 +58,7 @@ export function crearFormularioIngredientes(formTarjetas, contenedorTarjetas) {
     const nuevoIngrediente = new FoodItem(nombre, calorias, vegano, gluten, citrico);
 
     try {
-      const res = await fetch('/admin/ingredientes', {
+      const res = await fetch(`${API}/admin/ingredientes`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(nuevoIngrediente)

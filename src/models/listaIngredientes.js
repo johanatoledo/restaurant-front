@@ -1,11 +1,12 @@
-const backendBaseUrl = import.meta.env.VITE_API_URL || 'https://restaurant-back-production.up.railway.app';
+const VITE_API_URL = import.meta.env.VITE_API_URL;
+const API=`${VITE_API_URL}/api`
 
 export async function renderizarIngredientesEnContenedor() {
   const contenedor = document.getElementById('container-ingredientes');
   contenedor.innerHTML = '<div class="text-center p-5">Cargando ingredientes...</div>';
 
   try {
-    const res = await fetch(`${backendBaseUrl}/admin/listaIngredientes`);
+    const res = await fetch(`${API}/admin/listaIngredientes`);
     if (!res.ok) throw new Error("Error al obtener ingredientes");
     const ingredientes = await res.json();
 
@@ -91,7 +92,7 @@ export async function renderizarIngredientesEnContenedor() {
         card.querySelector('.eliminar-ingrediente').onclick = async () => {
           if (!confirm(`¿Eliminar ingrediente "${ing.nombre}"?`)) return;
           try {
-            const res = await fetch(`${backendBaseUrl}/admin/ingredientes/${ing.id}`, {
+            const res = await fetch(`${API}/admin/ingredientes/${ing.id}`, {
               method: "DELETE"
             });
             if (!res.ok) throw new Error("No se pudo eliminar el ingrediente");

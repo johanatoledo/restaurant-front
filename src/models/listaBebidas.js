@@ -1,13 +1,14 @@
 // listaBebidas.js
 
-const backendBaseUrl = import.meta.env.VITE_API_URL || 'https://restaurant-back-production.up.railway.app';
+const VITE_API_URL = import.meta.env.VITE_API_URL;
+const API=`${VITE_API_URL}/api`
 
 export async function renderizarBebidasEnContenedor() {
   const contenedor = document.getElementById('container-bebidas');
   contenedor.innerHTML = '<div class="text-center p-5">Cargando bebidas...</div>';
 
   try {
-    const res = await fetch(`${backendBaseUrl}/admin/listaBebidas`);
+    const res = await fetch(`${API}/admin/listaBebidas`);
     if (!res.ok) throw new Error("Error al obtener bebidas guardadas");
     const bebidas = await res.json();
 
@@ -54,7 +55,7 @@ export async function renderizarBebidasEnContenedor() {
               e.preventDefault();
               if (!confirm(`¿Eliminar bebida "${b.nombre}"?`)) return;
               try {
-                const res = await fetch(`${backendBaseUrl}/admin/bebidas/${b.id}`, {
+                const res = await fetch(`${API}/admin/bebidas/${b.id}`, {
                   method: "DELETE"
                 });
                 if (!res.ok) throw new Error("No se pudo eliminar la bebida");

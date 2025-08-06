@@ -1,6 +1,8 @@
 // listaBebidas.js
 
-const backendBaseUrl = import.meta.env.VITE_API_URL || 'https://restaurant-back-production.up.railway.app';
+const VITE_API_URL = import.meta.env.VITE_API_URL;
+const API=`${VITE_API_URL}/api`;
+const backendBaseUrl='https://restaurant-back-production.up.railway.app';
 
 
 export async function renderizarPlatosEnContenedor() {
@@ -8,7 +10,7 @@ export async function renderizarPlatosEnContenedor() {
   contenedor.innerHTML = '<div class="text-center p-5">Cargando platos...</div>';
 
   try {
-    const res = await fetch(`${backendBaseUrl}/admin/listaPlatos`);
+    const res = await fetch(`${API}/admin/listaPlatos`);
     if (!res.ok) throw new Error("Error al obtener los platos guardados");
     const platos = await res.json();
 
@@ -55,7 +57,7 @@ export async function renderizarPlatosEnContenedor() {
               e.preventDefault();
               if (!confirm(`¿Eliminar plato "${p.nombre}"?`)) return;
               try {
-                const res = await fetch(`${backendBaseUrl}/admin/platos/${p.id}`, {
+                const res = await fetch(`${API}/admin/platos/${p.id}`, {
                   method: "DELETE"
                 });
                 if (!res.ok) throw new Error("No se pudo eliminar el plato");

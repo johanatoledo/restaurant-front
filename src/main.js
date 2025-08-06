@@ -11,8 +11,8 @@ import { renderizarBebidasEnContenedor } from './models/listaBebidas.js';
 import { renderizarPlatosEnContenedor } from './models/listaPlatos.js';
 import { renderizarIngredientesEnContenedor } from './models/listaIngredientes.js';
 
-const API = import.meta.env.VITE_API_URL;
-
+const VITE_API_URL = import.meta.env.VITE_API_URL;
+const API=`${VITE_API_URL}/api`
 async function inicializarMenuPlatos() {
   const contenedor = document.getElementById('contenedor-menu-dinamico');
   if (!contenedor) return;

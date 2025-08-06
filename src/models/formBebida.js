@@ -1,7 +1,7 @@
 
 import { Drink } from './drink.js';
-
-const API_URL = import.meta.env.VITE_API_URL;
+const VITE_API_URL = import.meta.env.VITE_API_URL;
+const API=`${VITE_API_URL}/api`
 let formBebida = null;
 let listaIngredientes = []; 
 
@@ -181,7 +181,7 @@ async function cargarIngredientesSelect() {
 
   try {
    
-    const res = await fetch(`${API_URL}/admin/listaIngredientes`);
+    const res = await fetch(`${API}/admin/listaIngredientes`);
     const ingredientes = await res.json();
     ingredientes.forEach(ing => {
       const option = document.createElement("option");
@@ -223,7 +223,7 @@ const plainBebida = {
 
  
   try {
-    const res = await fetch(`${API_URL}/admin/bebidas`, {
+    const res = await fetch(`${API}/admin/bebidas`, {
       method: "POST",
       body: formData
     });
@@ -282,7 +282,7 @@ document.body.appendChild(toast);
 
 document.getElementById("toast-close").onclick = function () {
  
-  window.location.href = `${API_URL}/admin/bebidas`; 
+  window.location.href = `${API}/admin/bebidas`; 
 };
 
 
@@ -291,7 +291,7 @@ setTimeout(() => {
     toast.style.opacity = "0";
     setTimeout(() => {
       if (toast.parentNode) toast.remove();
-      window.location.href = `${API_URL}/admin/bebidas`;
+      window.location.href = `${API}/admin/bebidas`;
     }, 400);
   }
 }, 4000);
