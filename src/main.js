@@ -181,7 +181,12 @@ window.addEventListener("DOMContentLoaded", () => {
   initLoginForm();
   initRegisterOrRecover();
 
+  //menu platos y bebidas 
+  inicializarMenuBebidas();
+  inicializarMenuPlatos();
+
  
+/*
  // -- Código para manejar los eventos del menú --
 
   // Lógica para platos
@@ -219,5 +224,6 @@ window.addEventListener("DOMContentLoaded", () => {
       mostrarBebidasPorCategoria(searchParams.get('categoria'));
     }
   }
- 
+ */
+  
 });
