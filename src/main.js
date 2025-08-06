@@ -181,19 +181,43 @@ window.addEventListener("DOMContentLoaded", () => {
   initLoginForm();
   initRegisterOrRecover();
 
-  //menu platos y bebidas
+ 
+ // -- Código para manejar los eventos del menú --
 
- document.querySelectorAll('#menu-grid a[data-categoria]').forEach(link => {
-  link.addEventListener('click', function(e) {
-    e.preventDefault();
-    const categoria = this.getAttribute('data-categoria');
-    if (categoria) {
-      window.history.pushState({}, '', `?categoria=${encodeURIComponent(categoria)}`);
-
-      if (document.getElementById('contenedor-menu-dinamico')) inicializarMenuPlatos();
-      if (document.getElementById("menu-bebidas")) inicializarMenuBebidas();
-    }
+  // Lógica para platos
+  document.querySelectorAll('#menu-platos a[data-categoria]').forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const categoria = this.getAttribute('data-categoria');
+      if (categoria) {
+        window.history.pushState({}, '', `?categoria=${encodeURIComponent(categoria)}`);
+        inicializarMenuPlatos();
+      }
+    });
   });
-});
+
+  // Lógica para bebidas
+  document.querySelectorAll('#bebidas-categorias a').forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const params = new URLSearchParams(this.search);
+      const categoria = params.get('categoria');
+      if (categoria) {
+        mostrarBebidasPorCategoria(categoria);
+        window.history.pushState({}, '', `?categoria=${encodeURIComponent(categoria)}`);
+      }
+    });
+  });
+
+  // Inicialización basada en la URL (al cargar la página)
+  const searchParams = new URLSearchParams(window.location.search);
+  if (searchParams.has('categoria')) {
+    if (document.getElementById('contenedor-menu-dinamico')) {
+      inicializarMenuPlatos();
+    }
+    if (document.getElementById("menu-bebidas")) {
+      mostrarBebidasPorCategoria(searchParams.get('categoria'));
+    }
+  }
  
 });
