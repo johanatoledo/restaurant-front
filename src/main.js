@@ -112,7 +112,7 @@ async function mostrarBebidasPorCategoria(categoria) {
   const resultado = document.getElementById('resultado-bebidas');
   resultado.innerHTML = `<div class="text-center p-5">Cargando...</div>`;
   try {
-    const res = await fetch(`/menu/bebidas?categoria=${encodeURIComponent(categoria)}`);
+    const res = await fetch(`${API}/menu/bebidas?categoria=${encodeURIComponent(categoria)}`);
     const data = await res.json();
     renderizarTarjetasBebidas(resultado, data);
   } catch (error) {
