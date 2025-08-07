@@ -29,6 +29,7 @@ async function inicializarMenuPlatos() {
   }
 
   try {
+    
     const res = await fetch(apiURL);
     const data = await res.json();
     renderizarTarjetas(contenedor, data);
@@ -70,17 +71,17 @@ function inicializarMenuBebidas() {
     <div class="row justify-content-center g-3" id="bebidas-categorias">
       <div class="col-auto">
         <div class="menu-card" style="width: 200px; cursor:pointer;">
-          <a href="?categoria=Cocteles"><img src="/assets/coctelesCard.png" class="img-fluid rounded-4" alt="Cocteles" /></a>
+          <a href="?categoria=Cocteles"><img src="<%= frontendUrl %>/assets/coctelesCard.png" class="img-fluid rounded-4" alt="Cocteles" /></a>
         </div>
       </div>
       <div class="col-auto">
         <div class="menu-card" style="width: 200px; cursor:pointer;">
-          <a href="?categoria=Jugos%20Naturales"><img src="/assets/JugosCard.png" class="img-fluid rounded-4" alt="Jugos Naturales" /></a>
+          <a href="?categoria=Jugos%20Naturales"><img src="<%= frontendUrl %>/assets/JugosCard.png" class="img-fluid rounded-4" alt="Jugos Naturales" /></a>
         </div>
       </div>
       <div class="col-auto">
         <div class="menu-card" style="width: 200px; cursor:pointer;">
-          <a href="?categoria=Tragos"><img src="/assets/tragoscard.png" class="img-fluid rounded-4" alt="Tragos" /></a>
+          <a href="?categoria=Tragos"><img src="<%= frontendUrl %>/assets/tragoscard.png" class="img-fluid rounded-4" alt="Tragos" /></a>
         </div>
       </div>
     </div>
