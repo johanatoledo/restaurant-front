@@ -63,6 +63,7 @@ function renderizarTarjetas(contenedor, items) {
 }
 
 function inicializarMenuBebidas() {
+  const frontendUrl = 'https://restaurant-front-ten.vercel.app';
   const contenedorBebidas = document.getElementById("menu-bebidas");
   if (!contenedorBebidas) return;
 
@@ -71,17 +72,17 @@ function inicializarMenuBebidas() {
     <div class="row justify-content-center g-3" id="bebidas-categorias">
       <div class="col-auto">
         <div class="menu-card" style="width: 200px; cursor:pointer;">
-          <a href="?categoria=Cocteles"><img src="<%= frontendUrl %>/assets/coctelesCard.png" class="img-fluid rounded-4" alt="Cocteles" /></a>
+          <a href="?categoria=Cocteles"><img src="${frontendUrl}/assets/coctelesCard.png" class="img-fluid rounded-4" alt="Cocteles" /></a>
         </div>
       </div>
       <div class="col-auto">
         <div class="menu-card" style="width: 200px; cursor:pointer;">
-          <a href="?categoria=Jugos%20Naturales"><img src="<%= frontendUrl %>/assets/JugosCard.png" class="img-fluid rounded-4" alt="Jugos Naturales" /></a>
+          <a href="?categoria=Jugos%20Naturales"><img src="${frontendUrl}/assets/JugosCard.png" class="img-fluid rounded-4" alt="Jugos Naturales" /></a>
         </div>
       </div>
       <div class="col-auto">
         <div class="menu-card" style="width: 200px; cursor:pointer;">
-          <a href="?categoria=Tragos"><img src="<%= frontendUrl %>/assets/tragoscard.png" class="img-fluid rounded-4" alt="Tragos" /></a>
+          <a href="?categoria=Tragos"><img src="${frontendUrl}/assets/tragoscard.png" class="img-fluid rounded-4" alt="Tragos" /></a>
         </div>
       </div>
     </div>
@@ -187,44 +188,6 @@ window.addEventListener("DOMContentLoaded", () => {
   inicializarMenuPlatos();
 
  
-/*
- // -- Código para manejar los eventos del menú --
 
-  // Lógica para platos
-  document.querySelectorAll('#menu-platos a[data-categoria]').forEach(link => {
-    link.addEventListener('click', function(e) {
-      e.preventDefault();
-      const categoria = this.getAttribute('data-categoria');
-      if (categoria) {
-        window.history.pushState({}, '', `?categoria=${encodeURIComponent(categoria)}`);
-        inicializarMenuPlatos();
-      }
-    });
-  });
-
-  // Lógica para bebidas
-  document.querySelectorAll('#bebidas-categorias a').forEach(link => {
-    link.addEventListener('click', function(e) {
-      e.preventDefault();
-      const params = new URLSearchParams(this.search);
-      const categoria = params.get('categoria');
-      if (categoria) {
-        mostrarBebidasPorCategoria(categoria);
-        window.history.pushState({}, '', `?categoria=${encodeURIComponent(categoria)}`);
-      }
-    });
-  });
-
-  // Inicialización basada en la URL (al cargar la página)
-  const searchParams = new URLSearchParams(window.location.search);
-  if (searchParams.has('categoria')) {
-    if (document.getElementById('contenedor-menu-dinamico')) {
-      inicializarMenuPlatos();
-    }
-    if (document.getElementById("menu-bebidas")) {
-      mostrarBebidasPorCategoria(searchParams.get('categoria'));
-    }
-  }
- */
   
 });
